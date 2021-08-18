@@ -1,3 +1,5 @@
+# Aligning fog data from two different sensors
+
 import pandas as pd
 from datetime import timedelta
 
