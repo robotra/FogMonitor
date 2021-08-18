@@ -11,8 +11,8 @@ delta = timedelta(
      weeks=2
 )
 
-TFData = pd.read_csv('R:/Data/June21.csv')
-DSData = pd.read_csv('R:/Data/DS_June2021.csv')
+TFData = pd.read_csv('C:/Users/johnf/OneDrive/Documents/FogMonitor/Data/Calibration/TF_June21.csv')
+DSData = pd.read_csv('C:/Users/johnf/OneDrive/Documents/FogMonitor/Data/Calibration/DS_June21.csv')
 
 
 new_header = DSData.iloc[0] 
@@ -38,7 +38,7 @@ def CompTime(b_time, t_time):
     tdiff = abs(b_time - t_time)
     return tdiff
 
-for x in range(0, 10): #CompData.shape[0]):
+for x in range(0, CompData.shape[0]):
     prevtime = delta
     #print(TFData.iloc[x,2]) 
     for y in range(0, DSData.shape[0]):
@@ -50,4 +50,4 @@ for x in range(0, 10): #CompData.shape[0]):
             CompData.iloc[x,2] = DSData.iloc[y,1] ##Bring over bext
             CompData.iloc[x,5] = thistime ##save time delta
 
-CompData.to_csv("C:/Users/johnf/OneDrive/Documents/FogMonitor/Data/out.csv")
+CompData.to_csv("C:/Users/johnf/OneDrive/Documents/FogMonitor/Data/Calibration/out.csv")
